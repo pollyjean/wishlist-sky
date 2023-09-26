@@ -1,3 +1,5 @@
+export const STORAGE_KEY = "wishCountryList";
+
 export enum wishCategory {
   "WISH" = "WISH",
   "DONE" = "DONE",

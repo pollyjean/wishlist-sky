@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useSetRecoilState } from "recoil";
 import { countryInputForm, wishCategory, wishCountryList } from "commonConfig";
 import { wishState } from "atoms";
+import * as S from "../styles";
 
 const CountryInput = () => {
   const setWishCountry = useSetRecoilState(wishState);
@@ -24,14 +25,14 @@ const CountryInput = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="country">나라 이름 :</label>
-      <input
+      <S.Input
         type="text"
         placeholder="가고싶은 나라 이름"
         id="country"
         {...register("country", { required: "나라 이름을 적어주세요" })}
       />
       {errors.country?.message && <p>{errors.country.message}</p>}
-      <button type={"submit"}>가자!</button>
+      <S.Submit type={"submit"}>가자!</S.Submit>
     </form>
   );
 };

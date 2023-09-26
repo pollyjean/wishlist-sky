@@ -1,6 +1,7 @@
 import { wishState } from "atoms";
 import { wishCategory, wishCountryList } from "commonConfig";
 import { useSetRecoilState } from "recoil";
+import * as S from "../styles";
 
 const Categorize = (props: wishCountryList) => {
   const setWishCountry = useSetRecoilState(wishState);
@@ -26,29 +27,29 @@ const Categorize = (props: wishCountryList) => {
   return (
     <>
       {props.category === wishCategory.WISH && (
-        <button name={wishCategory.DONE} onClick={onClick} aria-label="Done">
+        <S.Button name={wishCategory.DONE} onClick={onClick} aria-label="Done">
           ☑︎
-        </button>
+        </S.Button>
       )}
       {props.category === wishCategory.WISH && (
-        <button onClick={handleRemove} aria-label="Remove">
+        <S.Button onClick={handleRemove} aria-label="Remove">
           🗑️
-        </button>
+        </S.Button>
       )}
       {props.category !== wishCategory.WISH && (
-        <button name={wishCategory.WISH} onClick={onClick} aria-label="Wish">
+        <S.Button name={wishCategory.WISH} onClick={onClick} aria-label="Wish">
           ❌
-        </button>
+        </S.Button>
       )}
       {props.category === wishCategory.DONE && (
-        <button name={wishCategory.LIKE} onClick={onClick} aria-label="Like">
+        <S.Button name={wishCategory.LIKE} onClick={onClick} aria-label="Like">
           👍
-        </button>
+        </S.Button>
       )}
       {props.category === wishCategory.LIKE && (
-        <button name={wishCategory.DONE} onClick={onClick} aria-label="Done">
+        <S.Button name={wishCategory.DONE} onClick={onClick} aria-label="Done">
           👎
-        </button>
+        </S.Button>
       )}
     </>
   );

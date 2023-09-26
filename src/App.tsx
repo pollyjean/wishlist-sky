@@ -3,12 +3,13 @@ import { wishCountryList } from "commonConfig";
 import CountryInput from "components/CountryInput";
 import WishList from "components/WishList";
 import { useRecoilValue } from "recoil";
+import * as S from "./styles";
 
 const App = () => {
   const [wish, done, like] = useRecoilValue(wishCategorized);
   return (
-    <main>
-      <section>
+    <S.Main>
+      <S.Section>
         <h2>내가 가고싶은 나라들</h2>
         <CountryInput />
         {wish && (
@@ -18,8 +19,8 @@ const App = () => {
             ))}
           </ul>
         )}
-      </section>
-      <section>
+      </S.Section>
+      <S.Section>
         <h3>내가 가본 나라들</h3>
         {done && (
           <ul>
@@ -28,8 +29,8 @@ const App = () => {
             ))}
           </ul>
         )}
-      </section>
-      <section>
+      </S.Section>
+      <S.Section>
         <h3>내가 좋아하는 나라들</h3>
         {like && (
           <ul>
@@ -38,8 +39,8 @@ const App = () => {
             ))}
           </ul>
         )}
-      </section>
-    </main>
+      </S.Section>
+    </S.Main>
   );
 };
 
